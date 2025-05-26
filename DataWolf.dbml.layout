@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataWolf">
+  <DataContextMoniker Name="/DataWolfDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ff0dacb0-a0aa-46f5-b860-520563b9d372" isExpanded="false" absoluteBounds="1.125, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTEmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3e66836-6258-4245-8b68-488faa3a4000" absoluteBounds="1.1400000000000001, 1.71, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc0f5d68-75e6-439d-87d8-d5667cb1b241" isExpanded="false" absoluteBounds="4, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/SyncEmp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="349b946a-7306-4535-8cd2-d2bad75e5d38" absoluteBounds="4.015, 1.71, 1.9700000000000002, 13.902791341145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b0a997b-3188-4a1c-bafe-00a5722fc271" isExpanded="false" absoluteBounds="1.125, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTPosition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f926bcee-178c-49ca-9d12-d6ab377c6563" absoluteBounds="1.1399999999999997, 2.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b995acd-fc0e-4bfc-803d-f0ca4659bb6a" isExpanded="false" absoluteBounds="1.125, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTDivision" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0568fa85-2ea8-466b-ab4f-5daf80ee83b0" absoluteBounds="1.1400000000000001, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a292827-6018-42c6-b0d0-96398f43d9bd" isExpanded="false" absoluteBounds="1.125, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94614f00-99a6-4cc8-b40f-aac99ffff375" absoluteBounds="1.1399999999999997, 3.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d15b4a3c-07b6-46c7-ae63-984e9652e729" isExpanded="false" absoluteBounds="1.125, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTPositionLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74d6fd15-28ce-43c0-96bd-4394c44345ee" absoluteBounds="1.1400000000000001, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8bb9faf0-132f-45dc-836b-5a5ff5364988" isExpanded="false" absoluteBounds="1.125, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/DataWolfDataContext/MSTCompany" />
+      <nestedChildShapes>
+        <elementListCompartment Id="681f5ce1-edc1-42f9-aea6-ac984770399b" absoluteBounds="1.1399999999999997, 4.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
