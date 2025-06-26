@@ -33,9 +33,6 @@ namespace SyncEmpMEA
     partial void InsertMSTEmployee(MSTEmployee instance);
     partial void UpdateMSTEmployee(MSTEmployee instance);
     partial void DeleteMSTEmployee(MSTEmployee instance);
-    partial void InsertSyncEmp(SyncEmp instance);
-    partial void UpdateSyncEmp(SyncEmp instance);
-    partial void DeleteSyncEmp(SyncEmp instance);
     partial void InsertMSTPosition(MSTPosition instance);
     partial void UpdateMSTPosition(MSTPosition instance);
     partial void DeleteMSTPosition(MSTPosition instance);
@@ -51,6 +48,12 @@ namespace SyncEmpMEA
     partial void InsertMSTCompany(MSTCompany instance);
     partial void UpdateMSTCompany(MSTCompany instance);
     partial void DeleteMSTCompany(MSTCompany instance);
+    partial void InsertSyncEmp(SyncEmp instance);
+    partial void UpdateSyncEmp(SyncEmp instance);
+    partial void DeleteSyncEmp(SyncEmp instance);
+    partial void InsertOrganizationSyncEmp(OrganizationSyncEmp instance);
+    partial void UpdateOrganizationSyncEmp(OrganizationSyncEmp instance);
+    partial void DeleteOrganizationSyncEmp(OrganizationSyncEmp instance);
     #endregion
 		
 		public DataWolfDataContext() : 
@@ -91,14 +94,6 @@ namespace SyncEmpMEA
 			}
 		}
 		
-		public System.Data.Linq.Table<SyncEmp> SyncEmps
-		{
-			get
-			{
-				return this.GetTable<SyncEmp>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MSTPosition> MSTPositions
 		{
 			get
@@ -136,6 +131,22 @@ namespace SyncEmpMEA
 			get
 			{
 				return this.GetTable<MSTCompany>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SyncEmp> SyncEmps
+		{
+			get
+			{
+				return this.GetTable<SyncEmp>();
+			}
+		}
+		
+		public System.Data.Linq.Table<OrganizationSyncEmp> OrganizationSyncEmps
+		{
+			get
+			{
+				return this.GetTable<OrganizationSyncEmp>();
 			}
 		}
 	}
@@ -729,1748 +740,6 @@ namespace SyncEmpMEA
 					this._Userid_Line = value;
 					this.SendPropertyChanged("Userid_Line");
 					this.OnUserid_LineChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SyncEmp")]
-	public partial class SyncEmp : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SyncEmpId;
-		
-		private System.Nullable<int> _assistId;
-		
-		private string _assistName;
-		
-		private string _assistNameEng;
-		
-		private string _assistShortName;
-		
-		private string _assistShortNameEng;
-		
-		private string _cLevel;
-		
-		private string _costCenter;
-		
-		private System.Nullable<int> _depId;
-		
-		private string _depName;
-		
-		private string _depNameEng;
-		
-		private string _depShortName;
-		
-		private string _depShortNameEng;
-		
-		private System.Nullable<int> _divId;
-		
-		private string _divName;
-		
-		private string _divNameEng;
-		
-		private string _divShortName;
-		
-		private string _divShortNameEng;
-		
-		private string _email;
-		
-		private string _empId;
-		
-		private string _empPicture;
-		
-		private string _firstName;
-		
-		private string _firstNameEng;
-		
-		private System.Nullable<bool> _isCommander;
-		
-		private System.Nullable<bool> _isContractEmployee;
-		
-		private System.Nullable<bool> _isNormalPeriod;
-		
-		private System.Nullable<int> _jobId;
-		
-		private string _jobName;
-		
-		private string _jobNameEng;
-		
-		private string _jobShortName;
-		
-		private string _jobShortNameEng;
-		
-		private string _lastName;
-		
-		private string _lastNameEng;
-		
-		private string _mcJobName;
-		
-		private string _orgDisplayName;
-		
-		private System.Nullable<int> _orgId;
-		
-		private string _orgLabel;
-		
-		private string _orgLevelId;
-		
-		private string _orgName;
-		
-		private string _orgNameEng;
-		
-		private string _orgShortName;
-		
-		private string _orgShortNameEng;
-		
-		private System.Nullable<int> _partId;
-		
-		private string _partName;
-		
-		private string _partNameEng;
-		
-		private string _partShortName;
-		
-		private string _partShortNameEng;
-		
-		private System.Nullable<int> _pathId;
-		
-		private string _pathName;
-		
-		private string _pathNameEng;
-		
-		private string _pathShortName;
-		
-		private string _pathShortNameEng;
-		
-		private System.Nullable<int> _posId;
-		
-		private string _posName;
-		
-		private string _posNameEng;
-		
-		private string _posShortName;
-		
-		private string _posShortNameEng;
-		
-		private string _prefix;
-		
-		private string _prefixEng;
-		
-		private System.Nullable<int> _secId;
-		
-		private string _secName;
-		
-		private string _secNameEng;
-		
-		private string _secShortName;
-		
-		private string _secShortNameEng;
-		
-		private string _tel;
-		
-		private string _telExtension;
-		
-		private string _telInternalPrefix;
-		
-		private string _telInternalSuffix;
-		
-		private string _telOfficial;
-		
-		private System.Nullable<System.Guid> _uuid;
-		
-		private System.Nullable<System.DateTime> _modifiledate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSyncEmpIdChanging(int value);
-    partial void OnSyncEmpIdChanged();
-    partial void OnassistIdChanging(System.Nullable<int> value);
-    partial void OnassistIdChanged();
-    partial void OnassistNameChanging(string value);
-    partial void OnassistNameChanged();
-    partial void OnassistNameEngChanging(string value);
-    partial void OnassistNameEngChanged();
-    partial void OnassistShortNameChanging(string value);
-    partial void OnassistShortNameChanged();
-    partial void OnassistShortNameEngChanging(string value);
-    partial void OnassistShortNameEngChanged();
-    partial void OncLevelChanging(string value);
-    partial void OncLevelChanged();
-    partial void OncostCenterChanging(string value);
-    partial void OncostCenterChanged();
-    partial void OndepIdChanging(System.Nullable<int> value);
-    partial void OndepIdChanged();
-    partial void OndepNameChanging(string value);
-    partial void OndepNameChanged();
-    partial void OndepNameEngChanging(string value);
-    partial void OndepNameEngChanged();
-    partial void OndepShortNameChanging(string value);
-    partial void OndepShortNameChanged();
-    partial void OndepShortNameEngChanging(string value);
-    partial void OndepShortNameEngChanged();
-    partial void OndivIdChanging(System.Nullable<int> value);
-    partial void OndivIdChanged();
-    partial void OndivNameChanging(string value);
-    partial void OndivNameChanged();
-    partial void OndivNameEngChanging(string value);
-    partial void OndivNameEngChanged();
-    partial void OndivShortNameChanging(string value);
-    partial void OndivShortNameChanged();
-    partial void OndivShortNameEngChanging(string value);
-    partial void OndivShortNameEngChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnempIdChanging(string value);
-    partial void OnempIdChanged();
-    partial void OnempPictureChanging(string value);
-    partial void OnempPictureChanged();
-    partial void OnfirstNameChanging(string value);
-    partial void OnfirstNameChanged();
-    partial void OnfirstNameEngChanging(string value);
-    partial void OnfirstNameEngChanged();
-    partial void OnisCommanderChanging(System.Nullable<bool> value);
-    partial void OnisCommanderChanged();
-    partial void OnisContractEmployeeChanging(System.Nullable<bool> value);
-    partial void OnisContractEmployeeChanged();
-    partial void OnisNormalPeriodChanging(System.Nullable<bool> value);
-    partial void OnisNormalPeriodChanged();
-    partial void OnjobIdChanging(System.Nullable<int> value);
-    partial void OnjobIdChanged();
-    partial void OnjobNameChanging(string value);
-    partial void OnjobNameChanged();
-    partial void OnjobNameEngChanging(string value);
-    partial void OnjobNameEngChanged();
-    partial void OnjobShortNameChanging(string value);
-    partial void OnjobShortNameChanged();
-    partial void OnjobShortNameEngChanging(string value);
-    partial void OnjobShortNameEngChanged();
-    partial void OnlastNameChanging(string value);
-    partial void OnlastNameChanged();
-    partial void OnlastNameEngChanging(string value);
-    partial void OnlastNameEngChanged();
-    partial void OnmcJobNameChanging(string value);
-    partial void OnmcJobNameChanged();
-    partial void OnorgDisplayNameChanging(string value);
-    partial void OnorgDisplayNameChanged();
-    partial void OnorgIdChanging(System.Nullable<int> value);
-    partial void OnorgIdChanged();
-    partial void OnorgLabelChanging(string value);
-    partial void OnorgLabelChanged();
-    partial void OnorgLevelIdChanging(string value);
-    partial void OnorgLevelIdChanged();
-    partial void OnorgNameChanging(string value);
-    partial void OnorgNameChanged();
-    partial void OnorgNameEngChanging(string value);
-    partial void OnorgNameEngChanged();
-    partial void OnorgShortNameChanging(string value);
-    partial void OnorgShortNameChanged();
-    partial void OnorgShortNameEngChanging(string value);
-    partial void OnorgShortNameEngChanged();
-    partial void OnpartIdChanging(System.Nullable<int> value);
-    partial void OnpartIdChanged();
-    partial void OnpartNameChanging(string value);
-    partial void OnpartNameChanged();
-    partial void OnpartNameEngChanging(string value);
-    partial void OnpartNameEngChanged();
-    partial void OnpartShortNameChanging(string value);
-    partial void OnpartShortNameChanged();
-    partial void OnpartShortNameEngChanging(string value);
-    partial void OnpartShortNameEngChanged();
-    partial void OnpathIdChanging(System.Nullable<int> value);
-    partial void OnpathIdChanged();
-    partial void OnpathNameChanging(string value);
-    partial void OnpathNameChanged();
-    partial void OnpathNameEngChanging(string value);
-    partial void OnpathNameEngChanged();
-    partial void OnpathShortNameChanging(string value);
-    partial void OnpathShortNameChanged();
-    partial void OnpathShortNameEngChanging(string value);
-    partial void OnpathShortNameEngChanged();
-    partial void OnposIdChanging(System.Nullable<int> value);
-    partial void OnposIdChanged();
-    partial void OnposNameChanging(string value);
-    partial void OnposNameChanged();
-    partial void OnposNameEngChanging(string value);
-    partial void OnposNameEngChanged();
-    partial void OnposShortNameChanging(string value);
-    partial void OnposShortNameChanged();
-    partial void OnposShortNameEngChanging(string value);
-    partial void OnposShortNameEngChanged();
-    partial void OnprefixChanging(string value);
-    partial void OnprefixChanged();
-    partial void OnprefixEngChanging(string value);
-    partial void OnprefixEngChanged();
-    partial void OnsecIdChanging(System.Nullable<int> value);
-    partial void OnsecIdChanged();
-    partial void OnsecNameChanging(string value);
-    partial void OnsecNameChanged();
-    partial void OnsecNameEngChanging(string value);
-    partial void OnsecNameEngChanged();
-    partial void OnsecShortNameChanging(string value);
-    partial void OnsecShortNameChanged();
-    partial void OnsecShortNameEngChanging(string value);
-    partial void OnsecShortNameEngChanged();
-    partial void OntelChanging(string value);
-    partial void OntelChanged();
-    partial void OntelExtensionChanging(string value);
-    partial void OntelExtensionChanged();
-    partial void OntelInternalPrefixChanging(string value);
-    partial void OntelInternalPrefixChanged();
-    partial void OntelInternalSuffixChanging(string value);
-    partial void OntelInternalSuffixChanged();
-    partial void OntelOfficialChanging(string value);
-    partial void OntelOfficialChanged();
-    partial void OnuuidChanging(System.Nullable<System.Guid> value);
-    partial void OnuuidChanged();
-    partial void OnmodifiledateChanging(System.Nullable<System.DateTime> value);
-    partial void OnmodifiledateChanged();
-    #endregion
-		
-		public SyncEmp()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyncEmpId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int SyncEmpId
-		{
-			get
-			{
-				return this._SyncEmpId;
-			}
-			set
-			{
-				if ((this._SyncEmpId != value))
-				{
-					this.OnSyncEmpIdChanging(value);
-					this.SendPropertyChanging();
-					this._SyncEmpId = value;
-					this.SendPropertyChanged("SyncEmpId");
-					this.OnSyncEmpIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistId", DbType="Int")]
-		public System.Nullable<int> assistId
-		{
-			get
-			{
-				return this._assistId;
-			}
-			set
-			{
-				if ((this._assistId != value))
-				{
-					this.OnassistIdChanging(value);
-					this.SendPropertyChanging();
-					this._assistId = value;
-					this.SendPropertyChanged("assistId");
-					this.OnassistIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistName", DbType="NVarChar(255)")]
-		public string assistName
-		{
-			get
-			{
-				return this._assistName;
-			}
-			set
-			{
-				if ((this._assistName != value))
-				{
-					this.OnassistNameChanging(value);
-					this.SendPropertyChanging();
-					this._assistName = value;
-					this.SendPropertyChanged("assistName");
-					this.OnassistNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistNameEng", DbType="NVarChar(255)")]
-		public string assistNameEng
-		{
-			get
-			{
-				return this._assistNameEng;
-			}
-			set
-			{
-				if ((this._assistNameEng != value))
-				{
-					this.OnassistNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._assistNameEng = value;
-					this.SendPropertyChanged("assistNameEng");
-					this.OnassistNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistShortName", DbType="NVarChar(255)")]
-		public string assistShortName
-		{
-			get
-			{
-				return this._assistShortName;
-			}
-			set
-			{
-				if ((this._assistShortName != value))
-				{
-					this.OnassistShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._assistShortName = value;
-					this.SendPropertyChanged("assistShortName");
-					this.OnassistShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistShortNameEng", DbType="NVarChar(255)")]
-		public string assistShortNameEng
-		{
-			get
-			{
-				return this._assistShortNameEng;
-			}
-			set
-			{
-				if ((this._assistShortNameEng != value))
-				{
-					this.OnassistShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._assistShortNameEng = value;
-					this.SendPropertyChanged("assistShortNameEng");
-					this.OnassistShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cLevel", DbType="NVarChar(50)")]
-		public string cLevel
-		{
-			get
-			{
-				return this._cLevel;
-			}
-			set
-			{
-				if ((this._cLevel != value))
-				{
-					this.OncLevelChanging(value);
-					this.SendPropertyChanging();
-					this._cLevel = value;
-					this.SendPropertyChanged("cLevel");
-					this.OncLevelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costCenter", DbType="NVarChar(50)")]
-		public string costCenter
-		{
-			get
-			{
-				return this._costCenter;
-			}
-			set
-			{
-				if ((this._costCenter != value))
-				{
-					this.OncostCenterChanging(value);
-					this.SendPropertyChanging();
-					this._costCenter = value;
-					this.SendPropertyChanged("costCenter");
-					this.OncostCenterChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depId", DbType="Int")]
-		public System.Nullable<int> depId
-		{
-			get
-			{
-				return this._depId;
-			}
-			set
-			{
-				if ((this._depId != value))
-				{
-					this.OndepIdChanging(value);
-					this.SendPropertyChanging();
-					this._depId = value;
-					this.SendPropertyChanged("depId");
-					this.OndepIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depName", DbType="NVarChar(255)")]
-		public string depName
-		{
-			get
-			{
-				return this._depName;
-			}
-			set
-			{
-				if ((this._depName != value))
-				{
-					this.OndepNameChanging(value);
-					this.SendPropertyChanging();
-					this._depName = value;
-					this.SendPropertyChanged("depName");
-					this.OndepNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depNameEng", DbType="NVarChar(255)")]
-		public string depNameEng
-		{
-			get
-			{
-				return this._depNameEng;
-			}
-			set
-			{
-				if ((this._depNameEng != value))
-				{
-					this.OndepNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._depNameEng = value;
-					this.SendPropertyChanged("depNameEng");
-					this.OndepNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depShortName", DbType="NVarChar(255)")]
-		public string depShortName
-		{
-			get
-			{
-				return this._depShortName;
-			}
-			set
-			{
-				if ((this._depShortName != value))
-				{
-					this.OndepShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._depShortName = value;
-					this.SendPropertyChanged("depShortName");
-					this.OndepShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depShortNameEng", DbType="NVarChar(255)")]
-		public string depShortNameEng
-		{
-			get
-			{
-				return this._depShortNameEng;
-			}
-			set
-			{
-				if ((this._depShortNameEng != value))
-				{
-					this.OndepShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._depShortNameEng = value;
-					this.SendPropertyChanged("depShortNameEng");
-					this.OndepShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divId", DbType="Int")]
-		public System.Nullable<int> divId
-		{
-			get
-			{
-				return this._divId;
-			}
-			set
-			{
-				if ((this._divId != value))
-				{
-					this.OndivIdChanging(value);
-					this.SendPropertyChanging();
-					this._divId = value;
-					this.SendPropertyChanged("divId");
-					this.OndivIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divName", DbType="NVarChar(255)")]
-		public string divName
-		{
-			get
-			{
-				return this._divName;
-			}
-			set
-			{
-				if ((this._divName != value))
-				{
-					this.OndivNameChanging(value);
-					this.SendPropertyChanging();
-					this._divName = value;
-					this.SendPropertyChanged("divName");
-					this.OndivNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divNameEng", DbType="NVarChar(255)")]
-		public string divNameEng
-		{
-			get
-			{
-				return this._divNameEng;
-			}
-			set
-			{
-				if ((this._divNameEng != value))
-				{
-					this.OndivNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._divNameEng = value;
-					this.SendPropertyChanged("divNameEng");
-					this.OndivNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divShortName", DbType="NVarChar(255)")]
-		public string divShortName
-		{
-			get
-			{
-				return this._divShortName;
-			}
-			set
-			{
-				if ((this._divShortName != value))
-				{
-					this.OndivShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._divShortName = value;
-					this.SendPropertyChanged("divShortName");
-					this.OndivShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divShortNameEng", DbType="NVarChar(255)")]
-		public string divShortNameEng
-		{
-			get
-			{
-				return this._divShortNameEng;
-			}
-			set
-			{
-				if ((this._divShortNameEng != value))
-				{
-					this.OndivShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._divShortNameEng = value;
-					this.SendPropertyChanged("divShortNameEng");
-					this.OndivShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(255)")]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empId", DbType="NVarChar(100)")]
-		public string empId
-		{
-			get
-			{
-				return this._empId;
-			}
-			set
-			{
-				if ((this._empId != value))
-				{
-					this.OnempIdChanging(value);
-					this.SendPropertyChanging();
-					this._empId = value;
-					this.SendPropertyChanged("empId");
-					this.OnempIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empPicture", DbType="NVarChar(500)")]
-		public string empPicture
-		{
-			get
-			{
-				return this._empPicture;
-			}
-			set
-			{
-				if ((this._empPicture != value))
-				{
-					this.OnempPictureChanging(value);
-					this.SendPropertyChanging();
-					this._empPicture = value;
-					this.SendPropertyChanged("empPicture");
-					this.OnempPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(255)")]
-		public string firstName
-		{
-			get
-			{
-				return this._firstName;
-			}
-			set
-			{
-				if ((this._firstName != value))
-				{
-					this.OnfirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._firstName = value;
-					this.SendPropertyChanged("firstName");
-					this.OnfirstNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstNameEng", DbType="NVarChar(255)")]
-		public string firstNameEng
-		{
-			get
-			{
-				return this._firstNameEng;
-			}
-			set
-			{
-				if ((this._firstNameEng != value))
-				{
-					this.OnfirstNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._firstNameEng = value;
-					this.SendPropertyChanged("firstNameEng");
-					this.OnfirstNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isCommander", DbType="Bit")]
-		public System.Nullable<bool> isCommander
-		{
-			get
-			{
-				return this._isCommander;
-			}
-			set
-			{
-				if ((this._isCommander != value))
-				{
-					this.OnisCommanderChanging(value);
-					this.SendPropertyChanging();
-					this._isCommander = value;
-					this.SendPropertyChanged("isCommander");
-					this.OnisCommanderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isContractEmployee", DbType="Bit")]
-		public System.Nullable<bool> isContractEmployee
-		{
-			get
-			{
-				return this._isContractEmployee;
-			}
-			set
-			{
-				if ((this._isContractEmployee != value))
-				{
-					this.OnisContractEmployeeChanging(value);
-					this.SendPropertyChanging();
-					this._isContractEmployee = value;
-					this.SendPropertyChanged("isContractEmployee");
-					this.OnisContractEmployeeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isNormalPeriod", DbType="Bit")]
-		public System.Nullable<bool> isNormalPeriod
-		{
-			get
-			{
-				return this._isNormalPeriod;
-			}
-			set
-			{
-				if ((this._isNormalPeriod != value))
-				{
-					this.OnisNormalPeriodChanging(value);
-					this.SendPropertyChanging();
-					this._isNormalPeriod = value;
-					this.SendPropertyChanged("isNormalPeriod");
-					this.OnisNormalPeriodChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobId", DbType="Int")]
-		public System.Nullable<int> jobId
-		{
-			get
-			{
-				return this._jobId;
-			}
-			set
-			{
-				if ((this._jobId != value))
-				{
-					this.OnjobIdChanging(value);
-					this.SendPropertyChanging();
-					this._jobId = value;
-					this.SendPropertyChanged("jobId");
-					this.OnjobIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobName", DbType="NVarChar(255)")]
-		public string jobName
-		{
-			get
-			{
-				return this._jobName;
-			}
-			set
-			{
-				if ((this._jobName != value))
-				{
-					this.OnjobNameChanging(value);
-					this.SendPropertyChanging();
-					this._jobName = value;
-					this.SendPropertyChanged("jobName");
-					this.OnjobNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobNameEng", DbType="NVarChar(255)")]
-		public string jobNameEng
-		{
-			get
-			{
-				return this._jobNameEng;
-			}
-			set
-			{
-				if ((this._jobNameEng != value))
-				{
-					this.OnjobNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._jobNameEng = value;
-					this.SendPropertyChanged("jobNameEng");
-					this.OnjobNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobShortName", DbType="NVarChar(255)")]
-		public string jobShortName
-		{
-			get
-			{
-				return this._jobShortName;
-			}
-			set
-			{
-				if ((this._jobShortName != value))
-				{
-					this.OnjobShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._jobShortName = value;
-					this.SendPropertyChanged("jobShortName");
-					this.OnjobShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobShortNameEng", DbType="NVarChar(255)")]
-		public string jobShortNameEng
-		{
-			get
-			{
-				return this._jobShortNameEng;
-			}
-			set
-			{
-				if ((this._jobShortNameEng != value))
-				{
-					this.OnjobShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._jobShortNameEng = value;
-					this.SendPropertyChanged("jobShortNameEng");
-					this.OnjobShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(255)")]
-		public string lastName
-		{
-			get
-			{
-				return this._lastName;
-			}
-			set
-			{
-				if ((this._lastName != value))
-				{
-					this.OnlastNameChanging(value);
-					this.SendPropertyChanging();
-					this._lastName = value;
-					this.SendPropertyChanged("lastName");
-					this.OnlastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastNameEng", DbType="NVarChar(255)")]
-		public string lastNameEng
-		{
-			get
-			{
-				return this._lastNameEng;
-			}
-			set
-			{
-				if ((this._lastNameEng != value))
-				{
-					this.OnlastNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._lastNameEng = value;
-					this.SendPropertyChanged("lastNameEng");
-					this.OnlastNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mcJobName", DbType="NVarChar(255)")]
-		public string mcJobName
-		{
-			get
-			{
-				return this._mcJobName;
-			}
-			set
-			{
-				if ((this._mcJobName != value))
-				{
-					this.OnmcJobNameChanging(value);
-					this.SendPropertyChanging();
-					this._mcJobName = value;
-					this.SendPropertyChanged("mcJobName");
-					this.OnmcJobNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgDisplayName", DbType="NVarChar(255)")]
-		public string orgDisplayName
-		{
-			get
-			{
-				return this._orgDisplayName;
-			}
-			set
-			{
-				if ((this._orgDisplayName != value))
-				{
-					this.OnorgDisplayNameChanging(value);
-					this.SendPropertyChanging();
-					this._orgDisplayName = value;
-					this.SendPropertyChanged("orgDisplayName");
-					this.OnorgDisplayNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgId", DbType="Int")]
-		public System.Nullable<int> orgId
-		{
-			get
-			{
-				return this._orgId;
-			}
-			set
-			{
-				if ((this._orgId != value))
-				{
-					this.OnorgIdChanging(value);
-					this.SendPropertyChanging();
-					this._orgId = value;
-					this.SendPropertyChanged("orgId");
-					this.OnorgIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgLabel", DbType="NVarChar(255)")]
-		public string orgLabel
-		{
-			get
-			{
-				return this._orgLabel;
-			}
-			set
-			{
-				if ((this._orgLabel != value))
-				{
-					this.OnorgLabelChanging(value);
-					this.SendPropertyChanging();
-					this._orgLabel = value;
-					this.SendPropertyChanged("orgLabel");
-					this.OnorgLabelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgLevelId", DbType="NVarChar(50)")]
-		public string orgLevelId
-		{
-			get
-			{
-				return this._orgLevelId;
-			}
-			set
-			{
-				if ((this._orgLevelId != value))
-				{
-					this.OnorgLevelIdChanging(value);
-					this.SendPropertyChanging();
-					this._orgLevelId = value;
-					this.SendPropertyChanged("orgLevelId");
-					this.OnorgLevelIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgName", DbType="NVarChar(255)")]
-		public string orgName
-		{
-			get
-			{
-				return this._orgName;
-			}
-			set
-			{
-				if ((this._orgName != value))
-				{
-					this.OnorgNameChanging(value);
-					this.SendPropertyChanging();
-					this._orgName = value;
-					this.SendPropertyChanged("orgName");
-					this.OnorgNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgNameEng", DbType="NVarChar(255)")]
-		public string orgNameEng
-		{
-			get
-			{
-				return this._orgNameEng;
-			}
-			set
-			{
-				if ((this._orgNameEng != value))
-				{
-					this.OnorgNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._orgNameEng = value;
-					this.SendPropertyChanged("orgNameEng");
-					this.OnorgNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgShortName", DbType="NVarChar(255)")]
-		public string orgShortName
-		{
-			get
-			{
-				return this._orgShortName;
-			}
-			set
-			{
-				if ((this._orgShortName != value))
-				{
-					this.OnorgShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._orgShortName = value;
-					this.SendPropertyChanged("orgShortName");
-					this.OnorgShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgShortNameEng", DbType="NVarChar(255)")]
-		public string orgShortNameEng
-		{
-			get
-			{
-				return this._orgShortNameEng;
-			}
-			set
-			{
-				if ((this._orgShortNameEng != value))
-				{
-					this.OnorgShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._orgShortNameEng = value;
-					this.SendPropertyChanged("orgShortNameEng");
-					this.OnorgShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partId", DbType="Int")]
-		public System.Nullable<int> partId
-		{
-			get
-			{
-				return this._partId;
-			}
-			set
-			{
-				if ((this._partId != value))
-				{
-					this.OnpartIdChanging(value);
-					this.SendPropertyChanging();
-					this._partId = value;
-					this.SendPropertyChanged("partId");
-					this.OnpartIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partName", DbType="NVarChar(255)")]
-		public string partName
-		{
-			get
-			{
-				return this._partName;
-			}
-			set
-			{
-				if ((this._partName != value))
-				{
-					this.OnpartNameChanging(value);
-					this.SendPropertyChanging();
-					this._partName = value;
-					this.SendPropertyChanged("partName");
-					this.OnpartNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partNameEng", DbType="NVarChar(255)")]
-		public string partNameEng
-		{
-			get
-			{
-				return this._partNameEng;
-			}
-			set
-			{
-				if ((this._partNameEng != value))
-				{
-					this.OnpartNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._partNameEng = value;
-					this.SendPropertyChanged("partNameEng");
-					this.OnpartNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partShortName", DbType="NVarChar(255)")]
-		public string partShortName
-		{
-			get
-			{
-				return this._partShortName;
-			}
-			set
-			{
-				if ((this._partShortName != value))
-				{
-					this.OnpartShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._partShortName = value;
-					this.SendPropertyChanged("partShortName");
-					this.OnpartShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partShortNameEng", DbType="NVarChar(255)")]
-		public string partShortNameEng
-		{
-			get
-			{
-				return this._partShortNameEng;
-			}
-			set
-			{
-				if ((this._partShortNameEng != value))
-				{
-					this.OnpartShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._partShortNameEng = value;
-					this.SendPropertyChanged("partShortNameEng");
-					this.OnpartShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathId", DbType="Int")]
-		public System.Nullable<int> pathId
-		{
-			get
-			{
-				return this._pathId;
-			}
-			set
-			{
-				if ((this._pathId != value))
-				{
-					this.OnpathIdChanging(value);
-					this.SendPropertyChanging();
-					this._pathId = value;
-					this.SendPropertyChanged("pathId");
-					this.OnpathIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathName", DbType="NVarChar(255)")]
-		public string pathName
-		{
-			get
-			{
-				return this._pathName;
-			}
-			set
-			{
-				if ((this._pathName != value))
-				{
-					this.OnpathNameChanging(value);
-					this.SendPropertyChanging();
-					this._pathName = value;
-					this.SendPropertyChanged("pathName");
-					this.OnpathNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathNameEng", DbType="NVarChar(255)")]
-		public string pathNameEng
-		{
-			get
-			{
-				return this._pathNameEng;
-			}
-			set
-			{
-				if ((this._pathNameEng != value))
-				{
-					this.OnpathNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._pathNameEng = value;
-					this.SendPropertyChanged("pathNameEng");
-					this.OnpathNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathShortName", DbType="NVarChar(255)")]
-		public string pathShortName
-		{
-			get
-			{
-				return this._pathShortName;
-			}
-			set
-			{
-				if ((this._pathShortName != value))
-				{
-					this.OnpathShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._pathShortName = value;
-					this.SendPropertyChanged("pathShortName");
-					this.OnpathShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathShortNameEng", DbType="NVarChar(255)")]
-		public string pathShortNameEng
-		{
-			get
-			{
-				return this._pathShortNameEng;
-			}
-			set
-			{
-				if ((this._pathShortNameEng != value))
-				{
-					this.OnpathShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._pathShortNameEng = value;
-					this.SendPropertyChanged("pathShortNameEng");
-					this.OnpathShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posId", DbType="Int")]
-		public System.Nullable<int> posId
-		{
-			get
-			{
-				return this._posId;
-			}
-			set
-			{
-				if ((this._posId != value))
-				{
-					this.OnposIdChanging(value);
-					this.SendPropertyChanging();
-					this._posId = value;
-					this.SendPropertyChanged("posId");
-					this.OnposIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posName", DbType="NVarChar(255)")]
-		public string posName
-		{
-			get
-			{
-				return this._posName;
-			}
-			set
-			{
-				if ((this._posName != value))
-				{
-					this.OnposNameChanging(value);
-					this.SendPropertyChanging();
-					this._posName = value;
-					this.SendPropertyChanged("posName");
-					this.OnposNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posNameEng", DbType="NVarChar(255)")]
-		public string posNameEng
-		{
-			get
-			{
-				return this._posNameEng;
-			}
-			set
-			{
-				if ((this._posNameEng != value))
-				{
-					this.OnposNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._posNameEng = value;
-					this.SendPropertyChanged("posNameEng");
-					this.OnposNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posShortName", DbType="NVarChar(255)")]
-		public string posShortName
-		{
-			get
-			{
-				return this._posShortName;
-			}
-			set
-			{
-				if ((this._posShortName != value))
-				{
-					this.OnposShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._posShortName = value;
-					this.SendPropertyChanged("posShortName");
-					this.OnposShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posShortNameEng", DbType="NVarChar(255)")]
-		public string posShortNameEng
-		{
-			get
-			{
-				return this._posShortNameEng;
-			}
-			set
-			{
-				if ((this._posShortNameEng != value))
-				{
-					this.OnposShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._posShortNameEng = value;
-					this.SendPropertyChanged("posShortNameEng");
-					this.OnposShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prefix", DbType="NVarChar(100)")]
-		public string prefix
-		{
-			get
-			{
-				return this._prefix;
-			}
-			set
-			{
-				if ((this._prefix != value))
-				{
-					this.OnprefixChanging(value);
-					this.SendPropertyChanging();
-					this._prefix = value;
-					this.SendPropertyChanged("prefix");
-					this.OnprefixChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prefixEng", DbType="NVarChar(100)")]
-		public string prefixEng
-		{
-			get
-			{
-				return this._prefixEng;
-			}
-			set
-			{
-				if ((this._prefixEng != value))
-				{
-					this.OnprefixEngChanging(value);
-					this.SendPropertyChanging();
-					this._prefixEng = value;
-					this.SendPropertyChanged("prefixEng");
-					this.OnprefixEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secId", DbType="Int")]
-		public System.Nullable<int> secId
-		{
-			get
-			{
-				return this._secId;
-			}
-			set
-			{
-				if ((this._secId != value))
-				{
-					this.OnsecIdChanging(value);
-					this.SendPropertyChanging();
-					this._secId = value;
-					this.SendPropertyChanged("secId");
-					this.OnsecIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secName", DbType="NVarChar(255)")]
-		public string secName
-		{
-			get
-			{
-				return this._secName;
-			}
-			set
-			{
-				if ((this._secName != value))
-				{
-					this.OnsecNameChanging(value);
-					this.SendPropertyChanging();
-					this._secName = value;
-					this.SendPropertyChanged("secName");
-					this.OnsecNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secNameEng", DbType="NVarChar(255)")]
-		public string secNameEng
-		{
-			get
-			{
-				return this._secNameEng;
-			}
-			set
-			{
-				if ((this._secNameEng != value))
-				{
-					this.OnsecNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._secNameEng = value;
-					this.SendPropertyChanged("secNameEng");
-					this.OnsecNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secShortName", DbType="NVarChar(255)")]
-		public string secShortName
-		{
-			get
-			{
-				return this._secShortName;
-			}
-			set
-			{
-				if ((this._secShortName != value))
-				{
-					this.OnsecShortNameChanging(value);
-					this.SendPropertyChanging();
-					this._secShortName = value;
-					this.SendPropertyChanged("secShortName");
-					this.OnsecShortNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secShortNameEng", DbType="NVarChar(255)")]
-		public string secShortNameEng
-		{
-			get
-			{
-				return this._secShortNameEng;
-			}
-			set
-			{
-				if ((this._secShortNameEng != value))
-				{
-					this.OnsecShortNameEngChanging(value);
-					this.SendPropertyChanging();
-					this._secShortNameEng = value;
-					this.SendPropertyChanged("secShortNameEng");
-					this.OnsecShortNameEngChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tel", DbType="NVarChar(50)")]
-		public string tel
-		{
-			get
-			{
-				return this._tel;
-			}
-			set
-			{
-				if ((this._tel != value))
-				{
-					this.OntelChanging(value);
-					this.SendPropertyChanging();
-					this._tel = value;
-					this.SendPropertyChanged("tel");
-					this.OntelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telExtension", DbType="NVarChar(50)")]
-		public string telExtension
-		{
-			get
-			{
-				return this._telExtension;
-			}
-			set
-			{
-				if ((this._telExtension != value))
-				{
-					this.OntelExtensionChanging(value);
-					this.SendPropertyChanging();
-					this._telExtension = value;
-					this.SendPropertyChanged("telExtension");
-					this.OntelExtensionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telInternalPrefix", DbType="NVarChar(50)")]
-		public string telInternalPrefix
-		{
-			get
-			{
-				return this._telInternalPrefix;
-			}
-			set
-			{
-				if ((this._telInternalPrefix != value))
-				{
-					this.OntelInternalPrefixChanging(value);
-					this.SendPropertyChanging();
-					this._telInternalPrefix = value;
-					this.SendPropertyChanged("telInternalPrefix");
-					this.OntelInternalPrefixChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telInternalSuffix", DbType="NVarChar(50)")]
-		public string telInternalSuffix
-		{
-			get
-			{
-				return this._telInternalSuffix;
-			}
-			set
-			{
-				if ((this._telInternalSuffix != value))
-				{
-					this.OntelInternalSuffixChanging(value);
-					this.SendPropertyChanging();
-					this._telInternalSuffix = value;
-					this.SendPropertyChanged("telInternalSuffix");
-					this.OntelInternalSuffixChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telOfficial", DbType="NVarChar(50)")]
-		public string telOfficial
-		{
-			get
-			{
-				return this._telOfficial;
-			}
-			set
-			{
-				if ((this._telOfficial != value))
-				{
-					this.OntelOfficialChanging(value);
-					this.SendPropertyChanging();
-					this._telOfficial = value;
-					this.SendPropertyChanged("telOfficial");
-					this.OntelOfficialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uuid", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> uuid
-		{
-			get
-			{
-				return this._uuid;
-			}
-			set
-			{
-				if ((this._uuid != value))
-				{
-					this.OnuuidChanging(value);
-					this.SendPropertyChanging();
-					this._uuid = value;
-					this.SendPropertyChanged("uuid");
-					this.OnuuidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modifiledate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> modifiledate
-		{
-			get
-			{
-				return this._modifiledate;
-			}
-			set
-			{
-				if ((this._modifiledate != value))
-				{
-					this.OnmodifiledateChanging(value);
-					this.SendPropertyChanging();
-					this._modifiledate = value;
-					this.SendPropertyChanged("modifiledate");
-					this.OnmodifiledateChanged();
 				}
 			}
 		}
@@ -4149,6 +2418,2314 @@ namespace SyncEmpMEA
 					this._BUCode = value;
 					this.SendPropertyChanged("BUCode");
 					this.OnBUCodeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SyncEmp")]
+	public partial class SyncEmp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SyncEmpId;
+		
+		private System.Nullable<int> _assistId;
+		
+		private string _assistName;
+		
+		private string _assistNameEng;
+		
+		private string _assistShortName;
+		
+		private string _assistShortNameEng;
+		
+		private string _cLevel;
+		
+		private string _costCenter;
+		
+		private System.Nullable<int> _depId;
+		
+		private string _depName;
+		
+		private string _depNameEng;
+		
+		private string _depShortName;
+		
+		private string _depShortNameEng;
+		
+		private System.Nullable<int> _divId;
+		
+		private string _divName;
+		
+		private string _divNameEng;
+		
+		private string _divShortName;
+		
+		private string _divShortNameEng;
+		
+		private string _email;
+		
+		private string _empId;
+		
+		private string _empPicture;
+		
+		private string _firstName;
+		
+		private string _firstNameEng;
+		
+		private System.Nullable<bool> _isCommander;
+		
+		private System.Nullable<bool> _isContractEmployee;
+		
+		private System.Nullable<bool> _isNormalPeriod;
+		
+		private System.Nullable<int> _jobId;
+		
+		private string _jobName;
+		
+		private string _jobNameEng;
+		
+		private string _jobShortName;
+		
+		private string _jobShortNameEng;
+		
+		private string _lastName;
+		
+		private string _lastNameEng;
+		
+		private string _mcJobName;
+		
+		private string _orgDisplayName;
+		
+		private System.Nullable<int> _orgId;
+		
+		private string _orgLabel;
+		
+		private string _orgLevelId;
+		
+		private string _orgName;
+		
+		private string _orgNameEng;
+		
+		private string _orgShortName;
+		
+		private string _orgShortNameEng;
+		
+		private System.Nullable<int> _partId;
+		
+		private string _partName;
+		
+		private string _partNameEng;
+		
+		private string _partShortName;
+		
+		private string _partShortNameEng;
+		
+		private System.Nullable<int> _pathId;
+		
+		private string _pathName;
+		
+		private string _pathNameEng;
+		
+		private string _pathShortName;
+		
+		private string _pathShortNameEng;
+		
+		private System.Nullable<int> _posId;
+		
+		private string _posName;
+		
+		private string _posNameEng;
+		
+		private string _posShortName;
+		
+		private string _posShortNameEng;
+		
+		private string _prefix;
+		
+		private string _prefixEng;
+		
+		private System.Nullable<int> _secId;
+		
+		private string _secName;
+		
+		private string _secNameEng;
+		
+		private string _secShortName;
+		
+		private string _secShortNameEng;
+		
+		private string _tel;
+		
+		private string _telExtension;
+		
+		private string _telInternalPrefix;
+		
+		private string _telInternalSuffix;
+		
+		private string _telOfficial;
+		
+		private System.Nullable<System.Guid> _uuid;
+		
+		private System.Nullable<System.DateTime> _modifiledate;
+		
+		private string _emppriority;
+		
+		private string _parrentid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSyncEmpIdChanging(int value);
+    partial void OnSyncEmpIdChanged();
+    partial void OnassistIdChanging(System.Nullable<int> value);
+    partial void OnassistIdChanged();
+    partial void OnassistNameChanging(string value);
+    partial void OnassistNameChanged();
+    partial void OnassistNameEngChanging(string value);
+    partial void OnassistNameEngChanged();
+    partial void OnassistShortNameChanging(string value);
+    partial void OnassistShortNameChanged();
+    partial void OnassistShortNameEngChanging(string value);
+    partial void OnassistShortNameEngChanged();
+    partial void OncLevelChanging(string value);
+    partial void OncLevelChanged();
+    partial void OncostCenterChanging(string value);
+    partial void OncostCenterChanged();
+    partial void OndepIdChanging(System.Nullable<int> value);
+    partial void OndepIdChanged();
+    partial void OndepNameChanging(string value);
+    partial void OndepNameChanged();
+    partial void OndepNameEngChanging(string value);
+    partial void OndepNameEngChanged();
+    partial void OndepShortNameChanging(string value);
+    partial void OndepShortNameChanged();
+    partial void OndepShortNameEngChanging(string value);
+    partial void OndepShortNameEngChanged();
+    partial void OndivIdChanging(System.Nullable<int> value);
+    partial void OndivIdChanged();
+    partial void OndivNameChanging(string value);
+    partial void OndivNameChanged();
+    partial void OndivNameEngChanging(string value);
+    partial void OndivNameEngChanged();
+    partial void OndivShortNameChanging(string value);
+    partial void OndivShortNameChanged();
+    partial void OndivShortNameEngChanging(string value);
+    partial void OndivShortNameEngChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnempIdChanging(string value);
+    partial void OnempIdChanged();
+    partial void OnempPictureChanging(string value);
+    partial void OnempPictureChanged();
+    partial void OnfirstNameChanging(string value);
+    partial void OnfirstNameChanged();
+    partial void OnfirstNameEngChanging(string value);
+    partial void OnfirstNameEngChanged();
+    partial void OnisCommanderChanging(System.Nullable<bool> value);
+    partial void OnisCommanderChanged();
+    partial void OnisContractEmployeeChanging(System.Nullable<bool> value);
+    partial void OnisContractEmployeeChanged();
+    partial void OnisNormalPeriodChanging(System.Nullable<bool> value);
+    partial void OnisNormalPeriodChanged();
+    partial void OnjobIdChanging(System.Nullable<int> value);
+    partial void OnjobIdChanged();
+    partial void OnjobNameChanging(string value);
+    partial void OnjobNameChanged();
+    partial void OnjobNameEngChanging(string value);
+    partial void OnjobNameEngChanged();
+    partial void OnjobShortNameChanging(string value);
+    partial void OnjobShortNameChanged();
+    partial void OnjobShortNameEngChanging(string value);
+    partial void OnjobShortNameEngChanged();
+    partial void OnlastNameChanging(string value);
+    partial void OnlastNameChanged();
+    partial void OnlastNameEngChanging(string value);
+    partial void OnlastNameEngChanged();
+    partial void OnmcJobNameChanging(string value);
+    partial void OnmcJobNameChanged();
+    partial void OnorgDisplayNameChanging(string value);
+    partial void OnorgDisplayNameChanged();
+    partial void OnorgIdChanging(System.Nullable<int> value);
+    partial void OnorgIdChanged();
+    partial void OnorgLabelChanging(string value);
+    partial void OnorgLabelChanged();
+    partial void OnorgLevelIdChanging(string value);
+    partial void OnorgLevelIdChanged();
+    partial void OnorgNameChanging(string value);
+    partial void OnorgNameChanged();
+    partial void OnorgNameEngChanging(string value);
+    partial void OnorgNameEngChanged();
+    partial void OnorgShortNameChanging(string value);
+    partial void OnorgShortNameChanged();
+    partial void OnorgShortNameEngChanging(string value);
+    partial void OnorgShortNameEngChanged();
+    partial void OnpartIdChanging(System.Nullable<int> value);
+    partial void OnpartIdChanged();
+    partial void OnpartNameChanging(string value);
+    partial void OnpartNameChanged();
+    partial void OnpartNameEngChanging(string value);
+    partial void OnpartNameEngChanged();
+    partial void OnpartShortNameChanging(string value);
+    partial void OnpartShortNameChanged();
+    partial void OnpartShortNameEngChanging(string value);
+    partial void OnpartShortNameEngChanged();
+    partial void OnpathIdChanging(System.Nullable<int> value);
+    partial void OnpathIdChanged();
+    partial void OnpathNameChanging(string value);
+    partial void OnpathNameChanged();
+    partial void OnpathNameEngChanging(string value);
+    partial void OnpathNameEngChanged();
+    partial void OnpathShortNameChanging(string value);
+    partial void OnpathShortNameChanged();
+    partial void OnpathShortNameEngChanging(string value);
+    partial void OnpathShortNameEngChanged();
+    partial void OnposIdChanging(System.Nullable<int> value);
+    partial void OnposIdChanged();
+    partial void OnposNameChanging(string value);
+    partial void OnposNameChanged();
+    partial void OnposNameEngChanging(string value);
+    partial void OnposNameEngChanged();
+    partial void OnposShortNameChanging(string value);
+    partial void OnposShortNameChanged();
+    partial void OnposShortNameEngChanging(string value);
+    partial void OnposShortNameEngChanged();
+    partial void OnprefixChanging(string value);
+    partial void OnprefixChanged();
+    partial void OnprefixEngChanging(string value);
+    partial void OnprefixEngChanged();
+    partial void OnsecIdChanging(System.Nullable<int> value);
+    partial void OnsecIdChanged();
+    partial void OnsecNameChanging(string value);
+    partial void OnsecNameChanged();
+    partial void OnsecNameEngChanging(string value);
+    partial void OnsecNameEngChanged();
+    partial void OnsecShortNameChanging(string value);
+    partial void OnsecShortNameChanged();
+    partial void OnsecShortNameEngChanging(string value);
+    partial void OnsecShortNameEngChanged();
+    partial void OntelChanging(string value);
+    partial void OntelChanged();
+    partial void OntelExtensionChanging(string value);
+    partial void OntelExtensionChanged();
+    partial void OntelInternalPrefixChanging(string value);
+    partial void OntelInternalPrefixChanged();
+    partial void OntelInternalSuffixChanging(string value);
+    partial void OntelInternalSuffixChanged();
+    partial void OntelOfficialChanging(string value);
+    partial void OntelOfficialChanged();
+    partial void OnuuidChanging(System.Nullable<System.Guid> value);
+    partial void OnuuidChanged();
+    partial void OnmodifiledateChanging(System.Nullable<System.DateTime> value);
+    partial void OnmodifiledateChanged();
+    partial void OnemppriorityChanging(string value);
+    partial void OnemppriorityChanged();
+    partial void OnparrentidChanging(string value);
+    partial void OnparrentidChanged();
+    #endregion
+		
+		public SyncEmp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyncEmpId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SyncEmpId
+		{
+			get
+			{
+				return this._SyncEmpId;
+			}
+			set
+			{
+				if ((this._SyncEmpId != value))
+				{
+					this.OnSyncEmpIdChanging(value);
+					this.SendPropertyChanging();
+					this._SyncEmpId = value;
+					this.SendPropertyChanged("SyncEmpId");
+					this.OnSyncEmpIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistId", DbType="Int")]
+		public System.Nullable<int> assistId
+		{
+			get
+			{
+				return this._assistId;
+			}
+			set
+			{
+				if ((this._assistId != value))
+				{
+					this.OnassistIdChanging(value);
+					this.SendPropertyChanging();
+					this._assistId = value;
+					this.SendPropertyChanged("assistId");
+					this.OnassistIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistName", DbType="NVarChar(255)")]
+		public string assistName
+		{
+			get
+			{
+				return this._assistName;
+			}
+			set
+			{
+				if ((this._assistName != value))
+				{
+					this.OnassistNameChanging(value);
+					this.SendPropertyChanging();
+					this._assistName = value;
+					this.SendPropertyChanged("assistName");
+					this.OnassistNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistNameEng", DbType="NVarChar(255)")]
+		public string assistNameEng
+		{
+			get
+			{
+				return this._assistNameEng;
+			}
+			set
+			{
+				if ((this._assistNameEng != value))
+				{
+					this.OnassistNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._assistNameEng = value;
+					this.SendPropertyChanged("assistNameEng");
+					this.OnassistNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistShortName", DbType="NVarChar(255)")]
+		public string assistShortName
+		{
+			get
+			{
+				return this._assistShortName;
+			}
+			set
+			{
+				if ((this._assistShortName != value))
+				{
+					this.OnassistShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._assistShortName = value;
+					this.SendPropertyChanged("assistShortName");
+					this.OnassistShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assistShortNameEng", DbType="NVarChar(255)")]
+		public string assistShortNameEng
+		{
+			get
+			{
+				return this._assistShortNameEng;
+			}
+			set
+			{
+				if ((this._assistShortNameEng != value))
+				{
+					this.OnassistShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._assistShortNameEng = value;
+					this.SendPropertyChanged("assistShortNameEng");
+					this.OnassistShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cLevel", DbType="NVarChar(50)")]
+		public string cLevel
+		{
+			get
+			{
+				return this._cLevel;
+			}
+			set
+			{
+				if ((this._cLevel != value))
+				{
+					this.OncLevelChanging(value);
+					this.SendPropertyChanging();
+					this._cLevel = value;
+					this.SendPropertyChanged("cLevel");
+					this.OncLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costCenter", DbType="NVarChar(50)")]
+		public string costCenter
+		{
+			get
+			{
+				return this._costCenter;
+			}
+			set
+			{
+				if ((this._costCenter != value))
+				{
+					this.OncostCenterChanging(value);
+					this.SendPropertyChanging();
+					this._costCenter = value;
+					this.SendPropertyChanged("costCenter");
+					this.OncostCenterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depId", DbType="Int")]
+		public System.Nullable<int> depId
+		{
+			get
+			{
+				return this._depId;
+			}
+			set
+			{
+				if ((this._depId != value))
+				{
+					this.OndepIdChanging(value);
+					this.SendPropertyChanging();
+					this._depId = value;
+					this.SendPropertyChanged("depId");
+					this.OndepIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depName", DbType="NVarChar(255)")]
+		public string depName
+		{
+			get
+			{
+				return this._depName;
+			}
+			set
+			{
+				if ((this._depName != value))
+				{
+					this.OndepNameChanging(value);
+					this.SendPropertyChanging();
+					this._depName = value;
+					this.SendPropertyChanged("depName");
+					this.OndepNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depNameEng", DbType="NVarChar(255)")]
+		public string depNameEng
+		{
+			get
+			{
+				return this._depNameEng;
+			}
+			set
+			{
+				if ((this._depNameEng != value))
+				{
+					this.OndepNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._depNameEng = value;
+					this.SendPropertyChanged("depNameEng");
+					this.OndepNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depShortName", DbType="NVarChar(255)")]
+		public string depShortName
+		{
+			get
+			{
+				return this._depShortName;
+			}
+			set
+			{
+				if ((this._depShortName != value))
+				{
+					this.OndepShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._depShortName = value;
+					this.SendPropertyChanged("depShortName");
+					this.OndepShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_depShortNameEng", DbType="NVarChar(255)")]
+		public string depShortNameEng
+		{
+			get
+			{
+				return this._depShortNameEng;
+			}
+			set
+			{
+				if ((this._depShortNameEng != value))
+				{
+					this.OndepShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._depShortNameEng = value;
+					this.SendPropertyChanged("depShortNameEng");
+					this.OndepShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divId", DbType="Int")]
+		public System.Nullable<int> divId
+		{
+			get
+			{
+				return this._divId;
+			}
+			set
+			{
+				if ((this._divId != value))
+				{
+					this.OndivIdChanging(value);
+					this.SendPropertyChanging();
+					this._divId = value;
+					this.SendPropertyChanged("divId");
+					this.OndivIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divName", DbType="NVarChar(255)")]
+		public string divName
+		{
+			get
+			{
+				return this._divName;
+			}
+			set
+			{
+				if ((this._divName != value))
+				{
+					this.OndivNameChanging(value);
+					this.SendPropertyChanging();
+					this._divName = value;
+					this.SendPropertyChanged("divName");
+					this.OndivNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divNameEng", DbType="NVarChar(255)")]
+		public string divNameEng
+		{
+			get
+			{
+				return this._divNameEng;
+			}
+			set
+			{
+				if ((this._divNameEng != value))
+				{
+					this.OndivNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._divNameEng = value;
+					this.SendPropertyChanged("divNameEng");
+					this.OndivNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divShortName", DbType="NVarChar(255)")]
+		public string divShortName
+		{
+			get
+			{
+				return this._divShortName;
+			}
+			set
+			{
+				if ((this._divShortName != value))
+				{
+					this.OndivShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._divShortName = value;
+					this.SendPropertyChanged("divShortName");
+					this.OndivShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_divShortNameEng", DbType="NVarChar(255)")]
+		public string divShortNameEng
+		{
+			get
+			{
+				return this._divShortNameEng;
+			}
+			set
+			{
+				if ((this._divShortNameEng != value))
+				{
+					this.OndivShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._divShortNameEng = value;
+					this.SendPropertyChanged("divShortNameEng");
+					this.OndivShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(255)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empId", DbType="NVarChar(100)")]
+		public string empId
+		{
+			get
+			{
+				return this._empId;
+			}
+			set
+			{
+				if ((this._empId != value))
+				{
+					this.OnempIdChanging(value);
+					this.SendPropertyChanging();
+					this._empId = value;
+					this.SendPropertyChanged("empId");
+					this.OnempIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_empPicture", DbType="NVarChar(500)")]
+		public string empPicture
+		{
+			get
+			{
+				return this._empPicture;
+			}
+			set
+			{
+				if ((this._empPicture != value))
+				{
+					this.OnempPictureChanging(value);
+					this.SendPropertyChanging();
+					this._empPicture = value;
+					this.SendPropertyChanged("empPicture");
+					this.OnempPictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NVarChar(255)")]
+		public string firstName
+		{
+			get
+			{
+				return this._firstName;
+			}
+			set
+			{
+				if ((this._firstName != value))
+				{
+					this.OnfirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._firstName = value;
+					this.SendPropertyChanged("firstName");
+					this.OnfirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstNameEng", DbType="NVarChar(255)")]
+		public string firstNameEng
+		{
+			get
+			{
+				return this._firstNameEng;
+			}
+			set
+			{
+				if ((this._firstNameEng != value))
+				{
+					this.OnfirstNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._firstNameEng = value;
+					this.SendPropertyChanged("firstNameEng");
+					this.OnfirstNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isCommander", DbType="Bit")]
+		public System.Nullable<bool> isCommander
+		{
+			get
+			{
+				return this._isCommander;
+			}
+			set
+			{
+				if ((this._isCommander != value))
+				{
+					this.OnisCommanderChanging(value);
+					this.SendPropertyChanging();
+					this._isCommander = value;
+					this.SendPropertyChanged("isCommander");
+					this.OnisCommanderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isContractEmployee", DbType="Bit")]
+		public System.Nullable<bool> isContractEmployee
+		{
+			get
+			{
+				return this._isContractEmployee;
+			}
+			set
+			{
+				if ((this._isContractEmployee != value))
+				{
+					this.OnisContractEmployeeChanging(value);
+					this.SendPropertyChanging();
+					this._isContractEmployee = value;
+					this.SendPropertyChanged("isContractEmployee");
+					this.OnisContractEmployeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isNormalPeriod", DbType="Bit")]
+		public System.Nullable<bool> isNormalPeriod
+		{
+			get
+			{
+				return this._isNormalPeriod;
+			}
+			set
+			{
+				if ((this._isNormalPeriod != value))
+				{
+					this.OnisNormalPeriodChanging(value);
+					this.SendPropertyChanging();
+					this._isNormalPeriod = value;
+					this.SendPropertyChanged("isNormalPeriod");
+					this.OnisNormalPeriodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobId", DbType="Int")]
+		public System.Nullable<int> jobId
+		{
+			get
+			{
+				return this._jobId;
+			}
+			set
+			{
+				if ((this._jobId != value))
+				{
+					this.OnjobIdChanging(value);
+					this.SendPropertyChanging();
+					this._jobId = value;
+					this.SendPropertyChanged("jobId");
+					this.OnjobIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobName", DbType="NVarChar(255)")]
+		public string jobName
+		{
+			get
+			{
+				return this._jobName;
+			}
+			set
+			{
+				if ((this._jobName != value))
+				{
+					this.OnjobNameChanging(value);
+					this.SendPropertyChanging();
+					this._jobName = value;
+					this.SendPropertyChanged("jobName");
+					this.OnjobNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobNameEng", DbType="NVarChar(255)")]
+		public string jobNameEng
+		{
+			get
+			{
+				return this._jobNameEng;
+			}
+			set
+			{
+				if ((this._jobNameEng != value))
+				{
+					this.OnjobNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._jobNameEng = value;
+					this.SendPropertyChanged("jobNameEng");
+					this.OnjobNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobShortName", DbType="NVarChar(255)")]
+		public string jobShortName
+		{
+			get
+			{
+				return this._jobShortName;
+			}
+			set
+			{
+				if ((this._jobShortName != value))
+				{
+					this.OnjobShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._jobShortName = value;
+					this.SendPropertyChanged("jobShortName");
+					this.OnjobShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobShortNameEng", DbType="NVarChar(255)")]
+		public string jobShortNameEng
+		{
+			get
+			{
+				return this._jobShortNameEng;
+			}
+			set
+			{
+				if ((this._jobShortNameEng != value))
+				{
+					this.OnjobShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._jobShortNameEng = value;
+					this.SendPropertyChanged("jobShortNameEng");
+					this.OnjobShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NVarChar(255)")]
+		public string lastName
+		{
+			get
+			{
+				return this._lastName;
+			}
+			set
+			{
+				if ((this._lastName != value))
+				{
+					this.OnlastNameChanging(value);
+					this.SendPropertyChanging();
+					this._lastName = value;
+					this.SendPropertyChanged("lastName");
+					this.OnlastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastNameEng", DbType="NVarChar(255)")]
+		public string lastNameEng
+		{
+			get
+			{
+				return this._lastNameEng;
+			}
+			set
+			{
+				if ((this._lastNameEng != value))
+				{
+					this.OnlastNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._lastNameEng = value;
+					this.SendPropertyChanged("lastNameEng");
+					this.OnlastNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mcJobName", DbType="NVarChar(255)")]
+		public string mcJobName
+		{
+			get
+			{
+				return this._mcJobName;
+			}
+			set
+			{
+				if ((this._mcJobName != value))
+				{
+					this.OnmcJobNameChanging(value);
+					this.SendPropertyChanging();
+					this._mcJobName = value;
+					this.SendPropertyChanged("mcJobName");
+					this.OnmcJobNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgDisplayName", DbType="NVarChar(255)")]
+		public string orgDisplayName
+		{
+			get
+			{
+				return this._orgDisplayName;
+			}
+			set
+			{
+				if ((this._orgDisplayName != value))
+				{
+					this.OnorgDisplayNameChanging(value);
+					this.SendPropertyChanging();
+					this._orgDisplayName = value;
+					this.SendPropertyChanged("orgDisplayName");
+					this.OnorgDisplayNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgId", DbType="Int")]
+		public System.Nullable<int> orgId
+		{
+			get
+			{
+				return this._orgId;
+			}
+			set
+			{
+				if ((this._orgId != value))
+				{
+					this.OnorgIdChanging(value);
+					this.SendPropertyChanging();
+					this._orgId = value;
+					this.SendPropertyChanged("orgId");
+					this.OnorgIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgLabel", DbType="NVarChar(255)")]
+		public string orgLabel
+		{
+			get
+			{
+				return this._orgLabel;
+			}
+			set
+			{
+				if ((this._orgLabel != value))
+				{
+					this.OnorgLabelChanging(value);
+					this.SendPropertyChanging();
+					this._orgLabel = value;
+					this.SendPropertyChanged("orgLabel");
+					this.OnorgLabelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgLevelId", DbType="NVarChar(50)")]
+		public string orgLevelId
+		{
+			get
+			{
+				return this._orgLevelId;
+			}
+			set
+			{
+				if ((this._orgLevelId != value))
+				{
+					this.OnorgLevelIdChanging(value);
+					this.SendPropertyChanging();
+					this._orgLevelId = value;
+					this.SendPropertyChanged("orgLevelId");
+					this.OnorgLevelIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgName", DbType="NVarChar(255)")]
+		public string orgName
+		{
+			get
+			{
+				return this._orgName;
+			}
+			set
+			{
+				if ((this._orgName != value))
+				{
+					this.OnorgNameChanging(value);
+					this.SendPropertyChanging();
+					this._orgName = value;
+					this.SendPropertyChanged("orgName");
+					this.OnorgNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgNameEng", DbType="NVarChar(255)")]
+		public string orgNameEng
+		{
+			get
+			{
+				return this._orgNameEng;
+			}
+			set
+			{
+				if ((this._orgNameEng != value))
+				{
+					this.OnorgNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._orgNameEng = value;
+					this.SendPropertyChanged("orgNameEng");
+					this.OnorgNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgShortName", DbType="NVarChar(255)")]
+		public string orgShortName
+		{
+			get
+			{
+				return this._orgShortName;
+			}
+			set
+			{
+				if ((this._orgShortName != value))
+				{
+					this.OnorgShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._orgShortName = value;
+					this.SendPropertyChanged("orgShortName");
+					this.OnorgShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orgShortNameEng", DbType="NVarChar(255)")]
+		public string orgShortNameEng
+		{
+			get
+			{
+				return this._orgShortNameEng;
+			}
+			set
+			{
+				if ((this._orgShortNameEng != value))
+				{
+					this.OnorgShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._orgShortNameEng = value;
+					this.SendPropertyChanged("orgShortNameEng");
+					this.OnorgShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partId", DbType="Int")]
+		public System.Nullable<int> partId
+		{
+			get
+			{
+				return this._partId;
+			}
+			set
+			{
+				if ((this._partId != value))
+				{
+					this.OnpartIdChanging(value);
+					this.SendPropertyChanging();
+					this._partId = value;
+					this.SendPropertyChanged("partId");
+					this.OnpartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partName", DbType="NVarChar(255)")]
+		public string partName
+		{
+			get
+			{
+				return this._partName;
+			}
+			set
+			{
+				if ((this._partName != value))
+				{
+					this.OnpartNameChanging(value);
+					this.SendPropertyChanging();
+					this._partName = value;
+					this.SendPropertyChanged("partName");
+					this.OnpartNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partNameEng", DbType="NVarChar(255)")]
+		public string partNameEng
+		{
+			get
+			{
+				return this._partNameEng;
+			}
+			set
+			{
+				if ((this._partNameEng != value))
+				{
+					this.OnpartNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._partNameEng = value;
+					this.SendPropertyChanged("partNameEng");
+					this.OnpartNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partShortName", DbType="NVarChar(255)")]
+		public string partShortName
+		{
+			get
+			{
+				return this._partShortName;
+			}
+			set
+			{
+				if ((this._partShortName != value))
+				{
+					this.OnpartShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._partShortName = value;
+					this.SendPropertyChanged("partShortName");
+					this.OnpartShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partShortNameEng", DbType="NVarChar(255)")]
+		public string partShortNameEng
+		{
+			get
+			{
+				return this._partShortNameEng;
+			}
+			set
+			{
+				if ((this._partShortNameEng != value))
+				{
+					this.OnpartShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._partShortNameEng = value;
+					this.SendPropertyChanged("partShortNameEng");
+					this.OnpartShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathId", DbType="Int")]
+		public System.Nullable<int> pathId
+		{
+			get
+			{
+				return this._pathId;
+			}
+			set
+			{
+				if ((this._pathId != value))
+				{
+					this.OnpathIdChanging(value);
+					this.SendPropertyChanging();
+					this._pathId = value;
+					this.SendPropertyChanged("pathId");
+					this.OnpathIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathName", DbType="NVarChar(255)")]
+		public string pathName
+		{
+			get
+			{
+				return this._pathName;
+			}
+			set
+			{
+				if ((this._pathName != value))
+				{
+					this.OnpathNameChanging(value);
+					this.SendPropertyChanging();
+					this._pathName = value;
+					this.SendPropertyChanged("pathName");
+					this.OnpathNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathNameEng", DbType="NVarChar(255)")]
+		public string pathNameEng
+		{
+			get
+			{
+				return this._pathNameEng;
+			}
+			set
+			{
+				if ((this._pathNameEng != value))
+				{
+					this.OnpathNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._pathNameEng = value;
+					this.SendPropertyChanged("pathNameEng");
+					this.OnpathNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathShortName", DbType="NVarChar(255)")]
+		public string pathShortName
+		{
+			get
+			{
+				return this._pathShortName;
+			}
+			set
+			{
+				if ((this._pathShortName != value))
+				{
+					this.OnpathShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._pathShortName = value;
+					this.SendPropertyChanged("pathShortName");
+					this.OnpathShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathShortNameEng", DbType="NVarChar(255)")]
+		public string pathShortNameEng
+		{
+			get
+			{
+				return this._pathShortNameEng;
+			}
+			set
+			{
+				if ((this._pathShortNameEng != value))
+				{
+					this.OnpathShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._pathShortNameEng = value;
+					this.SendPropertyChanged("pathShortNameEng");
+					this.OnpathShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posId", DbType="Int")]
+		public System.Nullable<int> posId
+		{
+			get
+			{
+				return this._posId;
+			}
+			set
+			{
+				if ((this._posId != value))
+				{
+					this.OnposIdChanging(value);
+					this.SendPropertyChanging();
+					this._posId = value;
+					this.SendPropertyChanged("posId");
+					this.OnposIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posName", DbType="NVarChar(255)")]
+		public string posName
+		{
+			get
+			{
+				return this._posName;
+			}
+			set
+			{
+				if ((this._posName != value))
+				{
+					this.OnposNameChanging(value);
+					this.SendPropertyChanging();
+					this._posName = value;
+					this.SendPropertyChanged("posName");
+					this.OnposNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posNameEng", DbType="NVarChar(255)")]
+		public string posNameEng
+		{
+			get
+			{
+				return this._posNameEng;
+			}
+			set
+			{
+				if ((this._posNameEng != value))
+				{
+					this.OnposNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._posNameEng = value;
+					this.SendPropertyChanged("posNameEng");
+					this.OnposNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posShortName", DbType="NVarChar(255)")]
+		public string posShortName
+		{
+			get
+			{
+				return this._posShortName;
+			}
+			set
+			{
+				if ((this._posShortName != value))
+				{
+					this.OnposShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._posShortName = value;
+					this.SendPropertyChanged("posShortName");
+					this.OnposShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posShortNameEng", DbType="NVarChar(255)")]
+		public string posShortNameEng
+		{
+			get
+			{
+				return this._posShortNameEng;
+			}
+			set
+			{
+				if ((this._posShortNameEng != value))
+				{
+					this.OnposShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._posShortNameEng = value;
+					this.SendPropertyChanged("posShortNameEng");
+					this.OnposShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prefix", DbType="NVarChar(100)")]
+		public string prefix
+		{
+			get
+			{
+				return this._prefix;
+			}
+			set
+			{
+				if ((this._prefix != value))
+				{
+					this.OnprefixChanging(value);
+					this.SendPropertyChanging();
+					this._prefix = value;
+					this.SendPropertyChanged("prefix");
+					this.OnprefixChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prefixEng", DbType="NVarChar(100)")]
+		public string prefixEng
+		{
+			get
+			{
+				return this._prefixEng;
+			}
+			set
+			{
+				if ((this._prefixEng != value))
+				{
+					this.OnprefixEngChanging(value);
+					this.SendPropertyChanging();
+					this._prefixEng = value;
+					this.SendPropertyChanged("prefixEng");
+					this.OnprefixEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secId", DbType="Int")]
+		public System.Nullable<int> secId
+		{
+			get
+			{
+				return this._secId;
+			}
+			set
+			{
+				if ((this._secId != value))
+				{
+					this.OnsecIdChanging(value);
+					this.SendPropertyChanging();
+					this._secId = value;
+					this.SendPropertyChanged("secId");
+					this.OnsecIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secName", DbType="NVarChar(255)")]
+		public string secName
+		{
+			get
+			{
+				return this._secName;
+			}
+			set
+			{
+				if ((this._secName != value))
+				{
+					this.OnsecNameChanging(value);
+					this.SendPropertyChanging();
+					this._secName = value;
+					this.SendPropertyChanged("secName");
+					this.OnsecNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secNameEng", DbType="NVarChar(255)")]
+		public string secNameEng
+		{
+			get
+			{
+				return this._secNameEng;
+			}
+			set
+			{
+				if ((this._secNameEng != value))
+				{
+					this.OnsecNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._secNameEng = value;
+					this.SendPropertyChanged("secNameEng");
+					this.OnsecNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secShortName", DbType="NVarChar(255)")]
+		public string secShortName
+		{
+			get
+			{
+				return this._secShortName;
+			}
+			set
+			{
+				if ((this._secShortName != value))
+				{
+					this.OnsecShortNameChanging(value);
+					this.SendPropertyChanging();
+					this._secShortName = value;
+					this.SendPropertyChanged("secShortName");
+					this.OnsecShortNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_secShortNameEng", DbType="NVarChar(255)")]
+		public string secShortNameEng
+		{
+			get
+			{
+				return this._secShortNameEng;
+			}
+			set
+			{
+				if ((this._secShortNameEng != value))
+				{
+					this.OnsecShortNameEngChanging(value);
+					this.SendPropertyChanging();
+					this._secShortNameEng = value;
+					this.SendPropertyChanged("secShortNameEng");
+					this.OnsecShortNameEngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tel", DbType="NVarChar(50)")]
+		public string tel
+		{
+			get
+			{
+				return this._tel;
+			}
+			set
+			{
+				if ((this._tel != value))
+				{
+					this.OntelChanging(value);
+					this.SendPropertyChanging();
+					this._tel = value;
+					this.SendPropertyChanged("tel");
+					this.OntelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telExtension", DbType="NVarChar(50)")]
+		public string telExtension
+		{
+			get
+			{
+				return this._telExtension;
+			}
+			set
+			{
+				if ((this._telExtension != value))
+				{
+					this.OntelExtensionChanging(value);
+					this.SendPropertyChanging();
+					this._telExtension = value;
+					this.SendPropertyChanged("telExtension");
+					this.OntelExtensionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telInternalPrefix", DbType="NVarChar(50)")]
+		public string telInternalPrefix
+		{
+			get
+			{
+				return this._telInternalPrefix;
+			}
+			set
+			{
+				if ((this._telInternalPrefix != value))
+				{
+					this.OntelInternalPrefixChanging(value);
+					this.SendPropertyChanging();
+					this._telInternalPrefix = value;
+					this.SendPropertyChanged("telInternalPrefix");
+					this.OntelInternalPrefixChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telInternalSuffix", DbType="NVarChar(50)")]
+		public string telInternalSuffix
+		{
+			get
+			{
+				return this._telInternalSuffix;
+			}
+			set
+			{
+				if ((this._telInternalSuffix != value))
+				{
+					this.OntelInternalSuffixChanging(value);
+					this.SendPropertyChanging();
+					this._telInternalSuffix = value;
+					this.SendPropertyChanged("telInternalSuffix");
+					this.OntelInternalSuffixChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telOfficial", DbType="NVarChar(50)")]
+		public string telOfficial
+		{
+			get
+			{
+				return this._telOfficial;
+			}
+			set
+			{
+				if ((this._telOfficial != value))
+				{
+					this.OntelOfficialChanging(value);
+					this.SendPropertyChanging();
+					this._telOfficial = value;
+					this.SendPropertyChanged("telOfficial");
+					this.OntelOfficialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uuid", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> uuid
+		{
+			get
+			{
+				return this._uuid;
+			}
+			set
+			{
+				if ((this._uuid != value))
+				{
+					this.OnuuidChanging(value);
+					this.SendPropertyChanging();
+					this._uuid = value;
+					this.SendPropertyChanged("uuid");
+					this.OnuuidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modifiledate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modifiledate
+		{
+			get
+			{
+				return this._modifiledate;
+			}
+			set
+			{
+				if ((this._modifiledate != value))
+				{
+					this.OnmodifiledateChanging(value);
+					this.SendPropertyChanging();
+					this._modifiledate = value;
+					this.SendPropertyChanged("modifiledate");
+					this.OnmodifiledateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emppriority", DbType="NVarChar(50)")]
+		public string emppriority
+		{
+			get
+			{
+				return this._emppriority;
+			}
+			set
+			{
+				if ((this._emppriority != value))
+				{
+					this.OnemppriorityChanging(value);
+					this.SendPropertyChanging();
+					this._emppriority = value;
+					this.SendPropertyChanged("emppriority");
+					this.OnemppriorityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_parrentid", DbType="NVarChar(50)")]
+		public string parrentid
+		{
+			get
+			{
+				return this._parrentid;
+			}
+			set
+			{
+				if ((this._parrentid != value))
+				{
+					this.OnparrentidChanging(value);
+					this.SendPropertyChanging();
+					this._parrentid = value;
+					this.SendPropertyChanged("parrentid");
+					this.OnparrentidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OrganizationSyncEmp")]
+	public partial class OrganizationSyncEmp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _OrgSyEmpId;
+		
+		private System.Nullable<int> _OrgId;
+		
+		private System.Nullable<int> _ParentOrgId;
+		
+		private string _OrgLevel;
+		
+		private string _Name;
+		
+		private string _NameSht;
+		
+		private System.Nullable<int> _PathId;
+		
+		private string _PathNameSht;
+		
+		private System.Nullable<int> _AssistId;
+		
+		private string _AssistNameSht;
+		
+		private System.Nullable<int> _DepId;
+		
+		private string _DepNameSht;
+		
+		private System.Nullable<int> _DivId;
+		
+		private string _DivNameSht;
+		
+		private System.Nullable<int> _SecId;
+		
+		private string _SecNameSht;
+		
+		private System.Nullable<int> _PartId;
+		
+		private string _PartNameSht;
+		
+		private string _CostCenter;
+		
+		private System.Nullable<System.DateTime> _ModifileDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOrgSyEmpIdChanging(int value);
+    partial void OnOrgSyEmpIdChanged();
+    partial void OnOrgIdChanging(System.Nullable<int> value);
+    partial void OnOrgIdChanged();
+    partial void OnParentOrgIdChanging(System.Nullable<int> value);
+    partial void OnParentOrgIdChanged();
+    partial void OnOrgLevelChanging(string value);
+    partial void OnOrgLevelChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnNameShtChanging(string value);
+    partial void OnNameShtChanged();
+    partial void OnPathIdChanging(System.Nullable<int> value);
+    partial void OnPathIdChanged();
+    partial void OnPathNameShtChanging(string value);
+    partial void OnPathNameShtChanged();
+    partial void OnAssistIdChanging(System.Nullable<int> value);
+    partial void OnAssistIdChanged();
+    partial void OnAssistNameShtChanging(string value);
+    partial void OnAssistNameShtChanged();
+    partial void OnDepIdChanging(System.Nullable<int> value);
+    partial void OnDepIdChanged();
+    partial void OnDepNameShtChanging(string value);
+    partial void OnDepNameShtChanged();
+    partial void OnDivIdChanging(System.Nullable<int> value);
+    partial void OnDivIdChanged();
+    partial void OnDivNameShtChanging(string value);
+    partial void OnDivNameShtChanged();
+    partial void OnSecIdChanging(System.Nullable<int> value);
+    partial void OnSecIdChanged();
+    partial void OnSecNameShtChanging(string value);
+    partial void OnSecNameShtChanged();
+    partial void OnPartIdChanging(System.Nullable<int> value);
+    partial void OnPartIdChanged();
+    partial void OnPartNameShtChanging(string value);
+    partial void OnPartNameShtChanged();
+    partial void OnCostCenterChanging(string value);
+    partial void OnCostCenterChanged();
+    partial void OnModifileDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifileDateChanged();
+    #endregion
+		
+		public OrganizationSyncEmp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgSyEmpId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int OrgSyEmpId
+		{
+			get
+			{
+				return this._OrgSyEmpId;
+			}
+			set
+			{
+				if ((this._OrgSyEmpId != value))
+				{
+					this.OnOrgSyEmpIdChanging(value);
+					this.SendPropertyChanging();
+					this._OrgSyEmpId = value;
+					this.SendPropertyChanged("OrgSyEmpId");
+					this.OnOrgSyEmpIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgId", DbType="Int")]
+		public System.Nullable<int> OrgId
+		{
+			get
+			{
+				return this._OrgId;
+			}
+			set
+			{
+				if ((this._OrgId != value))
+				{
+					this.OnOrgIdChanging(value);
+					this.SendPropertyChanging();
+					this._OrgId = value;
+					this.SendPropertyChanged("OrgId");
+					this.OnOrgIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentOrgId", DbType="Int")]
+		public System.Nullable<int> ParentOrgId
+		{
+			get
+			{
+				return this._ParentOrgId;
+			}
+			set
+			{
+				if ((this._ParentOrgId != value))
+				{
+					this.OnParentOrgIdChanging(value);
+					this.SendPropertyChanging();
+					this._ParentOrgId = value;
+					this.SendPropertyChanged("ParentOrgId");
+					this.OnParentOrgIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrgLevel", DbType="NVarChar(50)")]
+		public string OrgLevel
+		{
+			get
+			{
+				return this._OrgLevel;
+			}
+			set
+			{
+				if ((this._OrgLevel != value))
+				{
+					this.OnOrgLevelChanging(value);
+					this.SendPropertyChanging();
+					this._OrgLevel = value;
+					this.SendPropertyChanged("OrgLevel");
+					this.OnOrgLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameSht", DbType="NVarChar(50)")]
+		public string NameSht
+		{
+			get
+			{
+				return this._NameSht;
+			}
+			set
+			{
+				if ((this._NameSht != value))
+				{
+					this.OnNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._NameSht = value;
+					this.SendPropertyChanged("NameSht");
+					this.OnNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PathId", DbType="Int")]
+		public System.Nullable<int> PathId
+		{
+			get
+			{
+				return this._PathId;
+			}
+			set
+			{
+				if ((this._PathId != value))
+				{
+					this.OnPathIdChanging(value);
+					this.SendPropertyChanging();
+					this._PathId = value;
+					this.SendPropertyChanged("PathId");
+					this.OnPathIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PathNameSht", DbType="NVarChar(50)")]
+		public string PathNameSht
+		{
+			get
+			{
+				return this._PathNameSht;
+			}
+			set
+			{
+				if ((this._PathNameSht != value))
+				{
+					this.OnPathNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._PathNameSht = value;
+					this.SendPropertyChanged("PathNameSht");
+					this.OnPathNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssistId", DbType="Int")]
+		public System.Nullable<int> AssistId
+		{
+			get
+			{
+				return this._AssistId;
+			}
+			set
+			{
+				if ((this._AssistId != value))
+				{
+					this.OnAssistIdChanging(value);
+					this.SendPropertyChanging();
+					this._AssistId = value;
+					this.SendPropertyChanged("AssistId");
+					this.OnAssistIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssistNameSht", DbType="NVarChar(50)")]
+		public string AssistNameSht
+		{
+			get
+			{
+				return this._AssistNameSht;
+			}
+			set
+			{
+				if ((this._AssistNameSht != value))
+				{
+					this.OnAssistNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._AssistNameSht = value;
+					this.SendPropertyChanged("AssistNameSht");
+					this.OnAssistNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepId", DbType="Int")]
+		public System.Nullable<int> DepId
+		{
+			get
+			{
+				return this._DepId;
+			}
+			set
+			{
+				if ((this._DepId != value))
+				{
+					this.OnDepIdChanging(value);
+					this.SendPropertyChanging();
+					this._DepId = value;
+					this.SendPropertyChanged("DepId");
+					this.OnDepIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepNameSht", DbType="NVarChar(50)")]
+		public string DepNameSht
+		{
+			get
+			{
+				return this._DepNameSht;
+			}
+			set
+			{
+				if ((this._DepNameSht != value))
+				{
+					this.OnDepNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._DepNameSht = value;
+					this.SendPropertyChanged("DepNameSht");
+					this.OnDepNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivId", DbType="Int")]
+		public System.Nullable<int> DivId
+		{
+			get
+			{
+				return this._DivId;
+			}
+			set
+			{
+				if ((this._DivId != value))
+				{
+					this.OnDivIdChanging(value);
+					this.SendPropertyChanging();
+					this._DivId = value;
+					this.SendPropertyChanged("DivId");
+					this.OnDivIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivNameSht", DbType="NVarChar(50)")]
+		public string DivNameSht
+		{
+			get
+			{
+				return this._DivNameSht;
+			}
+			set
+			{
+				if ((this._DivNameSht != value))
+				{
+					this.OnDivNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._DivNameSht = value;
+					this.SendPropertyChanged("DivNameSht");
+					this.OnDivNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecId", DbType="Int")]
+		public System.Nullable<int> SecId
+		{
+			get
+			{
+				return this._SecId;
+			}
+			set
+			{
+				if ((this._SecId != value))
+				{
+					this.OnSecIdChanging(value);
+					this.SendPropertyChanging();
+					this._SecId = value;
+					this.SendPropertyChanged("SecId");
+					this.OnSecIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecNameSht", DbType="NVarChar(50)")]
+		public string SecNameSht
+		{
+			get
+			{
+				return this._SecNameSht;
+			}
+			set
+			{
+				if ((this._SecNameSht != value))
+				{
+					this.OnSecNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._SecNameSht = value;
+					this.SendPropertyChanged("SecNameSht");
+					this.OnSecNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartId", DbType="Int")]
+		public System.Nullable<int> PartId
+		{
+			get
+			{
+				return this._PartId;
+			}
+			set
+			{
+				if ((this._PartId != value))
+				{
+					this.OnPartIdChanging(value);
+					this.SendPropertyChanging();
+					this._PartId = value;
+					this.SendPropertyChanged("PartId");
+					this.OnPartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartNameSht", DbType="NVarChar(50)")]
+		public string PartNameSht
+		{
+			get
+			{
+				return this._PartNameSht;
+			}
+			set
+			{
+				if ((this._PartNameSht != value))
+				{
+					this.OnPartNameShtChanging(value);
+					this.SendPropertyChanging();
+					this._PartNameSht = value;
+					this.SendPropertyChanged("PartNameSht");
+					this.OnPartNameShtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostCenter", DbType="NVarChar(50)")]
+		public string CostCenter
+		{
+			get
+			{
+				return this._CostCenter;
+			}
+			set
+			{
+				if ((this._CostCenter != value))
+				{
+					this.OnCostCenterChanging(value);
+					this.SendPropertyChanging();
+					this._CostCenter = value;
+					this.SendPropertyChanged("CostCenter");
+					this.OnCostCenterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifileDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifileDate
+		{
+			get
+			{
+				return this._ModifileDate;
+			}
+			set
+			{
+				if ((this._ModifileDate != value))
+				{
+					this.OnModifileDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifileDate = value;
+					this.SendPropertyChanged("ModifileDate");
+					this.OnModifileDateChanged();
 				}
 			}
 		}

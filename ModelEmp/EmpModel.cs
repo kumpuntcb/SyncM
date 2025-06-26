@@ -83,6 +83,8 @@ namespace SyncEmpMEA.ModelEmp
         public string TelInternalPrefix { get; set; }
         public string TelInternalSuffix { get; set; }
         public string TelOfficial { get; set; }
+        public string parrentid { get; set; }
+        public string emppriority { get; set; }
         public Guid Uuid { get; set; }
     }
 

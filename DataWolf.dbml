@@ -28,81 +28,6 @@
       <Column Name="Userid_Line" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.SyncEmp" Member="SyncEmps">
-    <Type Name="SyncEmp">
-      <Column Name="SyncEmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="assistId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="assistName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="assistNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="assistShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="assistShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="costCenter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="depId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="depName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="depNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="depShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="depShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="divId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="divName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="divNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="divShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="divShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="empId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="empPicture" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="firstName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="firstNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="isCommander" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="isContractEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="isNormalPeriod" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="jobId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="jobName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="jobNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="jobShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="jobShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="lastName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="lastNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="mcJobName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgDisplayName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="orgLabel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgLevelId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="orgName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="orgShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="partId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="partName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="partNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="partShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="partShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="pathId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="pathName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="pathNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="pathShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="pathShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="posId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="posName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="posNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="posShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="posShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="prefix" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="prefixEng" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="secId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="secName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="secNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="secShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="secShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="telExtension" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="telInternalPrefix" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="telInternalSuffix" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="telOfficial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="uuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="modifiledate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.MSTPosition" Member="MSTPositions">
     <Type Name="MSTPosition">
       <Column Name="PositionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -183,6 +108,107 @@
       <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BUCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SyncEmp" Member="SyncEmps">
+    <Type Name="SyncEmp">
+      <Column Name="SyncEmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assistId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="assistName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="assistNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="assistShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="assistShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="costCenter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="depId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="depName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="depNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="depShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="depShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="divId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="divName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="divNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="divShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="divShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="empId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="empPicture" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="firstNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="isCommander" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isContractEmployee" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isNormalPeriod" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="jobId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="jobName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="jobNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="jobShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="jobShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="lastNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="mcJobName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgDisplayName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orgLabel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgLevelId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="orgName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="orgShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="partId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="partName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="partNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="partShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="partShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pathId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pathName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pathNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pathShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pathShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="posId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="posName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="posNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="posShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="posShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="prefix" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prefixEng" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="secId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="secName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secShortName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secShortNameEng" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telExtension" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telInternalPrefix" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telInternalSuffix" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telOfficial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="uuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="modifiledate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="emppriority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="parrentid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrganizationSyncEmp" Member="OrganizationSyncEmps">
+    <Type Name="OrganizationSyncEmp">
+      <Column Name="OrgSyEmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrgId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentOrgId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrgLevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PathId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PathNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssistId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssistNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DivId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DivNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SecId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PartId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartNameSht" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CostCenter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifileDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
